@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import javax.sql.DataSource;
 
 /**
- * Created by lihj on 2019/11/3.
+ * Created on 2019/11/3 in ssmredisnowebapp 项目 .
  */
 @RunWith(SpringJUnit4ClassRunner.class) //表示该测试用例是运用junit4进行测试，也可以换成其他测试框架
 //@ContextConfiguration就初始化了IOC？ 所以可@Autowired
@@ -38,5 +38,6 @@ public class CharpterTest {
         System.out.println(name+"   >>> "+password+"   >>> "+druid);
         logger.error("name:{},password:{},druid:{}",name,password,druid);
         juiceMaker.eat("红烧排骨");
+        System.out.println("版本控制");
     }
 }
