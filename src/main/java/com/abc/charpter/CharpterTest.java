@@ -39,5 +39,6 @@ public class CharpterTest {
         logger.error("name:{},password:{},druid:{}",name,password,druid);
         juiceMaker.eat("红烧排骨");
         System.out.println("版本控制");
+        System.out.println("版本控制git Extension");
     }
 }
