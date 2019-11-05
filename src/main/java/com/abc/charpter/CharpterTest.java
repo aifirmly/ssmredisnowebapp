@@ -2,6 +2,8 @@ package com.abc.charpter;
 
 
 import com.abc.charpter._09IOC.JuiceMaker;
+import com.abc.charpter._11AOP.impl.RoleService;
+import com.abc.charpter._11AOP.vo.Role;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -9,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -20,6 +23,7 @@ import javax.sql.DataSource;
 @RunWith(SpringJUnit4ClassRunner.class) //表示该测试用例是运用junit4进行测试，也可以换成其他测试框架
 //@ContextConfiguration就初始化了IOC？ 所以可@Autowired
 @ContextConfiguration(classes = {AppContextConfig.class}) //此注解用来加载配置ApplicationContext
+@EnableAspectJAutoProxy
 public class CharpterTest {
     private Logger logger = LoggerFactory.getLogger(CharpterTest.class);
     @Autowired
@@ -32,6 +36,8 @@ public class CharpterTest {
     @Autowired
     private JuiceMaker juiceMaker;
 
+    @Autowired
+    private RoleService roleService;
 
     @Test
     public void test(){
@@ -40,5 +46,8 @@ public class CharpterTest {
         juiceMaker.eat("红烧排骨");
         System.out.println("版本控制");
         System.out.println("版本控制git Extension");
+        Role role= new Role();
+        role.setName("出文康");
+        roleService.printRole(role);
     }
 }
