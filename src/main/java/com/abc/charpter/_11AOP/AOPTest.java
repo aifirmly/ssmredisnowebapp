@@ -31,8 +31,5 @@ public class AOPTest {
         role.setName("出文康");
         roleService.printRole(role);
     }
-    @Bean
-    public  AspectConfig aspectConfig(){
-        return  new AspectConfig();
-    }
+
 }
