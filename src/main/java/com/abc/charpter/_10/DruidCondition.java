@@ -13,6 +13,7 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 public class DruidCondition implements Condition {
     public boolean matches(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata) {
         Environment env= conditionContext.getEnvironment();
+        System.out.println("lhj");
         return env.containsProperty("jdbc.driver")
                 &&env.containsProperty("jdbc.username")
                 &&env.containsProperty("jdbc.password");
